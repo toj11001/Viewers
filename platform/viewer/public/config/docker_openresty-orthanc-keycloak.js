@@ -6,18 +6,21 @@ window.config = {
     dicomWeb: [
       {
         name: 'Orthanc',
-        wadoUriRoot: 'http://104.197.232.95/pacs/wado',
-        qidoRoot: 'http://104.197.232.95/pacs/dicom-web',
-        wadoRoot: 'http://104.197.232.95/pacs/dicom-web',
+        wadoUriRoot: 'http://104.197.232.95/orthanc/wado',
+        qidoRoot: 'http://104.197.232.95/orthanc/dicom-web',
+        wadoRoot: 'http://104.197.232.95/orthanc/dicom-web',
         qidoSupportsIncludeField: false,
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',
         // REQUIRED TAG:
         // TODO: Remove tag after https://github.com/OHIF/ohif-core/pull/19 is merged and we bump version
-        // requestOptions: {
-        // undefined to use JWT + Bearer auth
-        // auth: 'orthanc:orthanc',
-        // },
+        requestOptions: {
+          // undefined to use JWT + Bearer auth
+          auth: 'admin:$grc.2020!',
+          logRequests: true,
+          logResponses: false,
+          logTiming: true,
+        },
       },
     ],
   },
@@ -26,13 +29,13 @@ window.config = {
     {
       // ~ REQUIRED
       // Authorization Server URL
-      authority: 'http://104.197.232.95/auth/realms/ohif',
-      client_id: 'ohif-viewer',
-      redirect_uri: 'http://104.197.232.95/callback', // `OHIFStandaloneViewer.js`
-      // "Authorization Code Flow"
-      // Resource: https://medium.com/@darutk/diagrams-of-all-the-openid-connect-flows-6968e3990660
-      response_type: 'code',
-      scope: 'openid', // email profile openid
+      authority: 'https://dicom.eu.auth0.com/',
+      client_id: 'bwCfAW9uQSA4kW9dzMBNzzJdMWNslxSy',
+      client_secret:
+        'gzv5RZwbPpSeIVgUzMszx24NlK8R8oZObveY67V-PzcmfmVRJmx_-QDGyXbjftMv',
+      redirect_uri: 'https://viewer.germanoncologycenter.de/callback', // `OHIFStandaloneViewer.js`
+      response_type: 'authorization_code', // "Authorization Code Flow"
+      scope: 'openid email profile', // email profile openid
       // ~ OPTIONAL
       post_logout_redirect_uri: '/logout-redirect.html',
     },

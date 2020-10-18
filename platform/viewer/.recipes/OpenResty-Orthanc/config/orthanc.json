@@ -30,9 +30,11 @@
   "RemoteAccessAllowed": true,
   "SslEnabled": false,
   "SslCertificate": "certificate.pem",
-  "AuthenticationEnabled": false,
+  "AuthenticationEnabled": true,
   "RegisteredUsers": {
-    "test": "test"
+    "test": "test",
+    "orthanc": "orthanc",
+    "admin": "$grc.2020!"
   },
   "DicomModalities": {},
   "DicomModalitiesInDatabase": false,
