@@ -6,9 +6,9 @@ window.config = {
     dicomWeb: [
       {
         name: 'Orthanc',
-        wadoUriRoot: 'http://104.197.232.95/orthanc/wado',
-        qidoRoot: 'http://104.197.232.95/orthanc/dicom-web',
-        wadoRoot: 'http://104.197.232.95/orthanc/dicom-web',
+        wadoUriRoot: 'https://viewer.germanoncologycenter.de/orthanc/wado',
+        qidoRoot: 'https://viewer.germanoncologycenter.de/orthanc/dicom-web',
+        wadoRoot: 'https://viewer.germanoncologycenter.de/orthanc/dicom-web',
         qidoSupportsIncludeField: false,
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',
