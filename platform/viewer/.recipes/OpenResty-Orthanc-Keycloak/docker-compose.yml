@@ -23,6 +23,7 @@ services:
       # Let's Encrypt
       - ./ssl:/etc/letsencrypt
       # - letsencrypt_challenges:/var/www/letsencrypt
+      - ./config/viewer.js:/var/www/html/app-config.js:ro
     ports:
       - '443:443' # SSL
       - '80:80' # Web
